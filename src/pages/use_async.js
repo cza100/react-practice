@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from 'react';
 
-import { Typography, Divider, Button, Alert } from "antd";
+import { Typography, Divider, Button, Alert } from 'antd';
 
-import useAsync from "../hooks/use_async";
+import useAsync from '../hooks/use_async';
 
 const { Title, Paragraph } = Typography;
 
@@ -12,8 +12,8 @@ const UseAsync = () => {
       setTimeout(() => {
         const rnd = Math.random() * 10;
         rnd <= 5
-          ? resolve("Submitted successfully 🙌")
-          : reject("Oh no there was an error 😞");
+          ? resolve('Submitted successfully 🙌')
+          : reject('Oh no there was an error 😞');
       }, 2000);
     });
   };
@@ -24,7 +24,7 @@ const UseAsync = () => {
     <div>
       <Typography>
         <Title>useAsync</Title>
-        <Paragraph>处理异步任务的Hook.</Paragraph>
+        <Paragraph>处理异步任务的Hook</Paragraph>
       </Typography>
 
       <Divider />

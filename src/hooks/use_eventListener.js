@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 const useEventListener = (eventName, handler, element = window) => {
   const savedHandler = useRef();
@@ -11,7 +11,7 @@ const useEventListener = (eventName, handler, element = window) => {
     const isSupported = element && element.addEventListener;
     if (!isSupported) return;
 
-    const eventListener = ext => savedHandler.current(ext);
+    const eventListener = (ext) => savedHandler.current(ext);
 
     element.addEventListener(eventName, eventListener);
 

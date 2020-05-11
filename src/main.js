@@ -1,11 +1,14 @@
-import React from "react";
-import { Switch, Route, useHistory } from "react-router-dom";
-import { Layout, Menu, Row, Col } from "antd";
+import React from 'react';
 
-import { HomeOutlined, ApiOutlined } from "@ant-design/icons";
+import { Switch, Route, useHistory } from 'react-router-dom';
+import { Layout, Menu, Row, Col } from 'antd';
 
-import Home from "./pages/home";
-import UseAsync from "./pages/use_async";
+import { HomeOutlined, ApiOutlined } from '@ant-design/icons';
+
+import Home from './pages/home';
+import UseAsync from './pages/use_async';
+import UseDebounce from './pages/use_debounce';
+import UseEventListener from './pages/use_eventListener';
 
 const { Content } = Layout;
 const { SubMenu } = Menu;
@@ -19,7 +22,7 @@ const Main = () => {
         <Menu
           style={{ width: 256 }}
           mode="inline"
-          onSelect={item => {
+          onSelect={(item) => {
             history.push(item.key);
           }}
         >
@@ -28,18 +31,27 @@ const Main = () => {
           </Menu.Item>
           <SubMenu key="hook" icon={<ApiOutlined />} title="Hook">
             <Menu.Item key="/hook/use-async">useAsync</Menu.Item>
-            <Menu.Item key="4">Option 4</Menu.Item>
+            <Menu.Item key="/hook/use-debounce">useDebounce</Menu.Item>
+            <Menu.Item key="/hook/use-event-listener">
+              useEventListener
+            </Menu.Item>
           </SubMenu>
         </Menu>
       </Col>
       <Col xs={24} sm={24} md={18} lg={18} xl={19} xxl={20}>
-        <Content style={{ padding: "0 24px", minHeight: 280 }}>
+        <Content style={{ padding: '0 24px', minHeight: 280 }}>
           <Switch>
             <Route exact path="/">
               <Home />
             </Route>
             <Route path="/hook/use-async">
               <UseAsync />
+            </Route>
+            <Route path="/hook/use-debounce">
+              <UseDebounce />
+            </Route>
+            <Route path="/hook/use-event-listener">
+              <UseEventListener />
             </Route>
           </Switch>
         </Content>
