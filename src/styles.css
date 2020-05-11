@@ -1,0 +1,29 @@
+header {
+  position: relative;
+  z-index: 10;
+  max-width: 100%;
+  -webkit-box-shadow: 0 2px 8px #f0f1f2;
+  box-shadow: 0 2px 8px #f0f1f2;
+}
+
+.header-wrapper {
+  height: 64px;
+}
+
+.header-title {
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .header-title {
+    display: none;
+  }
+}
+
+.site-layout-background {
+  background: #fff;
+}
+
+.main-wrapper {
+  padding-top: 2.5rem;
+}
